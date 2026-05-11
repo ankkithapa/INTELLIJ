@@ -1,0 +1,38 @@
+CREATE TABLE Department1(
+DepNo INT PRIMARY KEY,
+DName VARCHAR(50),
+location VARCHAR(50)
+);
+CREATE TABLE Employee1(
+EmpNo INT PRIMARY KEY,
+EmpName VARCHAR(50),
+DepNo INT,
+
+foreign key  (DepNo)
+references Department1(DepNo)
+);
+
+CREATE TABLE course1(
+courseID CHAR(1) PRIMARY KEY,
+CourseName VARCHAR(50)
+);
+CREATE TABLE Teacher1(
+TeacherID VARCHAR(50)PRIMARY KEY,
+Teachername VARCHAR(50),
+courseID CHAR(1),
+foreign key  (courseID)
+references course1(courseID)
+);
+
+create table subject3(
+subjectID VARCHAR(10) primary key,
+subjectName VARCHAR(50)
+);
+
+create table student3(
+studenyID VARCHAR(10) primary key,
+studentName varchar(50),
+subjectID VARCHAR(10),
+FOREIGN KEY (subjectID)
+REFERENCES subject3 (subjectID)
+);
