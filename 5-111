@@ -37,6 +37,6 @@ CREATE TABLE Enrollment(
 studentID VARCHAR(10),
 studentID VARCHAR(10),
 PRIMARY KEY(studentID, subjectID),
-FOREGIN KEY(studentID)REFERENCES Studenttbl(studentID),
-FOREGIN KEY(studentID)REFERENCES Studenttbl(studentID)
+FOREIGNKEY(studentID)REFERENCES Studenttbl(studentID),
+FOREIGN KEY(studentID)REFERENCES Studenttbl(studentID)
 );
