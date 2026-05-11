@@ -1,0 +1,24 @@
+CREATE TABLE Users2(
+usersID VARCHAR(10)PRIMARY KEY,
+name VARCHAR(50)
+);
+ 
+CREATE TABLE UserProfile1(
+profileID INT PRIMARY KEY,
+country VARCHAR(100),
+user_id VARCHAR(10),
+FOREIGN KEY (user_id)REFERENCES Users2(usersID)
+);
+
+CREATE TABLE Customer(
+CustomerID INT PRIMARY KEY,
+name VARCHAR(50)
+);
+
+CREATE TABLE Orders(
+OrdersID VARCHAR(50) PRIMARY KEY,
+description VARCHAR(50),
+amount INT,
+customerID INT,
+FOREIGN KEY (CustomerID)REFERENCES Customer(customerID)
+);
